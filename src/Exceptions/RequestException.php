@@ -58,7 +58,7 @@ class RequestException extends Exception
             $this->messages[] = $error->message;
         }
 
-        $this->message = trim(join('. ', $this->messages));
+        $this->message = array_unique($this->messages);
     }
 
     /**
